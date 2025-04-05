@@ -37,9 +37,9 @@ bearish = find_bearish_divergence(data)
 
 # 가격 차트
 fig_price = go.Figure()
-fig_price.add_trace(go.Scatter(x=data.index, y=data['Close'], name="종가", line=dict(color="blue")))
-fig_price.add_trace(go.Scatter(x=data.index[bullish], y=data['Close'].iloc[bullish], mode='markers', name='🟢 매수', marker=dict(color='green', size=10))))
-fig_price.add_trace(go.Scatter(x=data.index[bearish], y=data['Close'].iloc[bearish], mode='markers', name='🔴 매도', marker=dict(color='red', size=10))))
+fig_price.add_trace(go.Scatter(x=data.index, y=data['Close'], name="종가", line=dict(color="blue"))
+fig_price.add_trace(go.Scatter(x=data.index[bullish], y=data['Close'].iloc[bullish], mode='markers', name='🟢 매수', marker=dict(color='green', size=10)))
+fig_price.add_trace(go.Scatter(x=data.index[bearish], y=data['Close'].iloc[bearish], mode='markers', name='🔴 매도', marker=dict(color='red', size=10)))
 fig_price.update_layout(title=f"{symbol} 가격 및 RSI 다이버전스", xaxis_title="날짜", yaxis_title="가격")
 st.plotly_chart(fig_price, use_container_width=True)
 
